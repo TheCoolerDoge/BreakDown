@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    /*változók az animciókhoz*/
+    --size: 25vmin;
+    --position: calc(var(--size) / 2);
+    --color1: #FCA311;
+    --color2: #14213D;
+    --color3: #E5E5E5;
+    --background: #FFFFFF;
+    --deley: 16000ms;
+    --animation: cubic-bezier(0.76, 0, 0.24, 1);
+
+    /*háttér értékeinek megadása*/
+    background-color: var(--background);
+    background-image:
+    linear-gradient(45deg, var(--color1) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--color1) 25%, transparent 25%),
+    linear-gradient(45deg,  transparent 75%, var(--color2) 75%),
+    linear-gradient(-45deg,  transparent 75%,var(--color2) 75%);
+    background-size: var(--size) var(--size);
+    background-position:
+    calc(var(--position) *  -1) calc(var(--position) *  1),
+    calc(var(--position) * 1) calc(var(--position) *  0),
+    calc(var(--position) *  -1) calc(var(--position) * 0),
+    calc(var(--position) * 1) calc(var(--position) *  -1);
+    animation: color var(--deley) var(--animation) infinite,
+    position var(--deley) var(--animation) infinite;
+}
+/*pozíció megváltoztatása*/
+@keyframes position {
+    0% {
+        background-position:
+                calc(var(--position) *  1) calc(var(--position) *  0),
+                calc(var(--position) * -1) calc(var(--position) *  1),
+                calc(var(--position) *  1) calc(var(--position) * -1),
+                calc(var(--position) * -1) calc(var(--position) *  0);
+    }
+    25% {
+        background-position:
+                calc(var(--position) *  1) calc(var(--position) *  4),
+                calc(var(--position) * -1) calc(var(--position) *  5),
+                calc(var(--position) *  1) calc(var(--position) *  3),
+                calc(var(--position) * -1) calc(var(--position) *  4);
+    }
+    50% {
+        background-position:
+                calc(var(--position) *  3) calc(var(--position) * 8),
+                calc(var(--position) * -3) calc(var(--position) * 9),
+                calc(var(--position) *  2) calc(var(--position) * 7),
+                calc(var(--position) * -2) calc(var(--position) * 8);
+    }
+    75% {
+        background-position:
+                calc(var(--position) *  3) calc(var(--position) * 12),
+                calc(var(--position) * -3) calc(var(--position) * 13),
+                calc(var(--position) *  2) calc(var(--position) * 11),
+                calc(var(--position) * -2) calc(var(--position) * 12);
+    }
+    100% {
+        background-position:
+                calc(var(--position) *  5) calc(var(--position) * 16),
+                calc(var(--position) * -5) calc(var(--position) * 17),
+                calc(var(--position) *  5) calc(var(--position) * 15),
+                calc(var(--position) * -5) calc(var(--position) * 16);
+    }
+}
+
+
+
+#wrapper {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+#container {
+    display: table-cell;
+    vertical-align: middle;
+    horiz-align: center;
+
+}
+
+#canvas {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    display: block;
+    margin: auto;
+    background-color: #E5E5E5;
+
+}
+
+#ido{
+    background-color: #FFFFFF;
+    text-align: center;
+    text-transform: uppercase;
+    color: #FCA311;
+}
+
+#gameover{
+    display: none;
+    position: absolute;
+    background-color: #FCA311;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    width: 608px;
+    height: 800px;
+    line-height: 50px;
+    text-align: center;
+}
+
+#info{
+    position: absolute;
+    display: block;
+    border-radius: 10px;
+    border: solid #14213D 5px;
+    background-color: #FCA311;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%,-50%);
+    z-index: 100;
+    text-align: center;
+}
+
+#toplista{
+    list-style: none;
+    color: #14213D;
+
+}
+

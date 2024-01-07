@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakdown</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="gameover">
+    <h1>Game Over</h1>
+    <button type="button" onclick="nextlvl()">
+        Next Level
+    </button>
+    <ul id="toplista"></ul>
+</div>
+
+<div id="info">
+    <h3>a játék célja minél több blockot kiütni 50mp alatt,
+        <br> 25, 13 és 5mp-nél új sor jelenik meg,
+    <br> a blockokat dupla kattintással lehet eltüntetni,
+    <br> minél nagyobb az adott block annál több pontot ér</h3>
+    <button type="button" onclick="ok()">OK</button>
+
+</div>
+
+<div id="wrapper">
+    <div id="container">
+        <p id="ido"></p>
+        <canvas id="canvas" width="608" height="800" style="border: solid black 5px"></canvas>
+    </div>
+</div>
+<script src="breakdown.js"></script>
+</body>
+</html>
